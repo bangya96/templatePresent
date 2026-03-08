@@ -25,7 +25,7 @@
 <script setup>
 defineProps({
   title: { type: String, default: '' },
-  footerTitle: { type: String, default: 'Place your cover page title here' },
+  footerTitle: { type: String, default: '' },
 })
 </script>
 

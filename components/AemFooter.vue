@@ -3,7 +3,7 @@
     <img :src="'/bottom.png'" alt="" class="aem-footer-img" />
     <div class="aem-footer-overlay">
       <div class="aem-footer-title">
-        <slot name="title">{{ title }}</slot>
+        <slot name="title">{{ displayTitle }}</slot>
       </div>
       <div class="aem-footer-url">
         <a href="https://www.aemenersol.com" target="_blank">www.aemenersol.com</a>
@@ -19,9 +19,19 @@
 </template>
 
 <script setup>
-defineProps({
-  title: { type: String, default: 'Place your cover page title here' },
+import { computed } from 'vue'
+import { useSlideContext } from '@slidev/client'
+
+const props = defineProps({
+  title: { type: String, default: '' },
   year: { type: [String, Number], default: 2024 },
+})
+
+const { $frontmatter } = useSlideContext()
+
+const displayTitle = computed(() => {
+  if (props.title) return props.title
+  return $frontmatter?.title || 'Infrastructure Evolution'
 })
 </script>
 

@@ -43,7 +43,7 @@
 defineProps({
   title: { type: String, default: '' },
   subtitle: { type: String, default: '' },
-  footerTitle: { type: String, default: 'Place your cover page title here' },
+  footerTitle: { type: String, default: '' },
 })
 </script>
 
@@ -112,11 +112,31 @@ defineProps({
   padding: 16px;
   font-size: 0.9rem;
   line-height: 1.6;
+  color: #333;
+}
+.twocols-left :deep(h3),
+.twocols-right :deep(h3) {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #064B77;
+  margin: 0 0 8px;
+}
+.twocols-left :deep(p),
+.twocols-right :deep(p) {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 4px 0;
+  line-height: 1.5;
 }
 .twocols-left :deep(ul),
 .twocols-left :deep(ol),
 .twocols-right :deep(ul),
 .twocols-right :deep(ol) {
   padding-left: 1.2rem;
+}
+.twocols-left :deep(li),
+.twocols-right :deep(li) {
+  color: #555;
+  font-size: 0.85rem;
 }
 </style>

@@ -49,7 +49,7 @@
 defineProps({
   title: { type: String, default: '' },
   subtitle: { type: String, default: '' },
-  footerTitle: { type: String, default: 'Place your cover page title here' },
+  footerTitle: { type: String, default: '' },
 })
 </script>
 
@@ -117,6 +117,7 @@ defineProps({
   padding: 16px;
   font-size: 0.85rem;
   line-height: 1.5;
+  color: #333;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -131,5 +132,11 @@ defineProps({
   font-size: 0.9rem;
   color: #1D275A;
   margin: 8px 0 4px;
+}
+.fourcols-item :deep(p) {
+  font-size: 0.75rem;
+  color: #555;
+  margin: 4px 0 0;
+  line-height: 1.4;
 }
 </style>
